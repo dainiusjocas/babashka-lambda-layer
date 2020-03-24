@@ -8,7 +8,7 @@ Resources:
     Properties:
       LayerName: babashka-runtime
       Description: Babashka runtime
-      ContentUri: babashka-runtime.zip
+      ContentUri: s3://pointer2-labs/babashka/faf03056b7a2094d14c189b46aea9af2
       CompatibleRuntimes:
         - provided
       LicenseInfo: https://github.com/dainiusjocas/babashka-lambda-layer/blob/master/LICENSE

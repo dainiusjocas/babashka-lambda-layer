@@ -21,5 +21,8 @@ deploy: package
         --capabilities CAPABILITY_IAM \
         --no-fail-on-empty-changeset
 
-publish-layer:
-	aws lambda publish-layer-version --layer-name babashka-runtime --zip-file fileb://babashka-runtime.zip
+publish-layer: build
+	aws lambda publish-layer-version \
+		--layer-name babashka-runtime \
+		--principal "*" \
+		--zip-file fileb://babashka-runtime.zip
