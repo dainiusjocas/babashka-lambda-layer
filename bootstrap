@@ -1,0 +1,6 @@
+#!/bin/sh
+
+set -euo pipefail
+
+export BABASHKA_DISABLE_PIPE_SIGNAL_HANDLER="true"
+babashka

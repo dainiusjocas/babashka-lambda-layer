@@ -1,0 +1,35 @@
+AWSTemplateFormatVersion: 2010-09-09
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  Babashka Lambda runtime packaged as a Lambda layer.
+Resources:
+  BabashkaLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: babashka-runtime
+      Description: Babashka runtime
+      ContentUri: babashka-runtime.zip
+      CompatibleRuntimes:
+        - provided
+      LicenseInfo: https://github.com/dainiusjocas/babashka-lambda-layer/blob/master/LICENSE
+      RetentionPolicy: Retain
+
+Outputs:
+  LayerVersion:
+    Description: Layer ARN Reference
+    Value: !Ref BabashkaLayer
+
+Metadata:
+  AWS::ServerlessRepo::Application:
+    Name: babashka-runtime-lambda-layer
+    Description: >
+      Babashka lambda runtime packaged as a Lambda layer.
+      Bundles Babashka 0.0.78.
+    Author: Dainius Jocas
+    SpdxLicenseId: Apache-2.0
+    LicenseUrl: LICENSE
+    ReadmeUrl: README.md
+    Labels: ['layer', 'babashka', 'lambda', 'clojure']
+    HomePageUrl: https://github.com/dainiusjocas/babashka-lambda-layer
+    SemanticVersion: 0.1.0
+    SourceCodeUrl: https://github.com/dainiusjocas/babashka-lambda-layer
