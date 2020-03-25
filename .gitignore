@@ -6,3 +6,6 @@
 .env
 function.zip
 .nrepl-port
+babashka-runtime.zip
+examples/out
+examples/function.zip
